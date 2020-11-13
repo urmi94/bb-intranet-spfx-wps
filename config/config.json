@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "bluebox-intranet-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/broadcastAnnoucements/BroadcastAnnoucementsWebPart.js",
+          "manifest": "./src/webparts/broadcastAnnoucements/BroadcastAnnoucementsWebPart.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/webparts/billboard/BillboardWebPart.js",
+          "manifest": "./src/webparts/billboard/BillboardWebPart.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/webparts/weatherAndClock/WeatherAndClockWebPart.js",
+          "manifest": "./src/webparts/weatherAndClock/WeatherAndClockWebPart.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/webparts/faQs/FaQsWebPart.js",
+          "manifest": "./src/webparts/faQs/FaQsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "jquery": {
+      "path": "node_modules/jquery/dist/jquery.min.js",
+      "globalName": "jQuery"
+    },
+    "jqueryui": "node_modules/jqueryui/jquery-ui.min.js",
+    "fabric": {
+      "path": "https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js",
+      "globalName": "fabric",
+      "globalDependencies": [
+        "jquery"
+      ]
+    },
+    "Bluebox.Broadcast": {
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxBroadcast/Core/webparts/broadcast/Broadcast.js",
+      "globalName": "Bluebox.Broadcast",
+      "globalDependencies": [
+        "jquery",
+        "Bluebox.Constants",
+        "Bluebox.Loader"
+      ]
+    },
+    "Bluebox.Billboard": {
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxBillboard/core/webparts/billboard/billboard.js",
+      "globalName": "Bluebox.Billboard",
+      "globalDependencies": [
+        "jquery",
+        "Bluebox.Constants",
+        "Bluebox.Loader"
+      ]
+    },
+    "Bluebox.WeatherAndClock": {
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxWeatherAndClock/Core/webparts/weatherandclock/weatherandclock.js",
+      "globalName": "Bluebox.WeatherAndClock",
+      "globalDependencies": [
+        "jquery",
+        "Bluebox.Constants",
+        "Bluebox.Loader"
+      ]
+    },
+    "Bluebox.Util": {
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-scripts/Bluebox.Util.js",
+      "globalName": "Bluebox.Util",
+      "globalDependencies": [
+        "jquery"
+      ]
+    },
+    "Bluebox.Constants": {
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-scripts/Bluebox.Constants.js",
+      "globalName": "Bluebox.Constants",
+      "globalDependencies": [
+        "jquery"
+      ]
+    },
+    "Bluebox.Loader": {
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-scripts/Bluebox.Loader.js",
+      "globalName": "Bluebox.Loader",
+      "globalDependencies": [
+        "jquery",
+        "Bluebox.Constants",
+        "Bluebox.Util"
+      ]
+    }
+  },
+  "localizedResources": {
+    "BroadcastAnnoucementsWebPartStrings": "lib/webparts/broadcastAnnoucements/loc/{locale}.js",
+    "BillboardWebPartStrings": "lib/webparts/billboard/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
+    "WeatherAndClockWebPartStrings": "lib/webparts/weatherAndClock/loc/{locale}.js",
+    "FaQsWebPartStrings": "lib/webparts/faQs/loc/{locale}.js"
+  }
+}

@@ -12,6 +12,7 @@ require('Bluebox.Util');
 require('Bluebox.Constants');
 require('Bluebox.Loader');
 require('Bluebox.Broadcast');
+// require('moment');
 
 import AnnouncementDetailsDialog from './AnnouncementDetailsDialog';
 import AnnouncementListDialog from './AnnouncementListDialog';
@@ -47,6 +48,13 @@ export interface ISPListItem {
 }
 
 export default class BroadcastAnnouncementsWebPart extends BaseClientSideWebPart<IBroadcastAnnouncementsWebPartProps>  {
+  
+  protected onInit(): Promise<void> {
+    var page = this.context.pageContext.legacyPageContext;
+    window["_spPageContextInfo"] = page;
+
+    return super.onInit();
+  }
   
    private _getListData(): Promise<ISPList> {
     
@@ -106,7 +114,6 @@ export default class BroadcastAnnouncementsWebPart extends BaseClientSideWebPart
 
     var checkScriptExist = setInterval(() => {
       if(Bluebox.Constants != "undefined" && Bluebox.Loader != "undefined" && Bluebox.Broadcast2 != "undefined" && jQuery.fn.vTicker != "undefined") {
-         console.log("checkScriptExist!");
          Bluebox.Broadcast2.Execute(option);
          clearInterval(checkScriptExist);
       } 

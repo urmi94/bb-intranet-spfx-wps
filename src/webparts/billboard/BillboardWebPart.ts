@@ -23,6 +23,13 @@ export interface IBillboardWebPartProps {
 
 export default class BillboardWebPart extends BaseClientSideWebPart<IBillboardWebPartProps> {
 
+  protected onInit(): Promise<void> {
+    //this.properties.tabModel = hipsterTabsToModel(this.properties.tabs, this.getZones());
+    var page = this.context.pageContext.legacyPageContext;
+    window["_spPageContextInfo"] = page;
+    return super.onInit();
+  }
+
   public render(): void {
     
     var _options = {

@@ -22,3 +22,8 @@ declare module "Bluebox.Util" {
     var util: any;
     export = util; 
 }
+
+// declare module "moment" { 
+//     var moment: any;
+//     export = moment; 
+// }

@@ -7,7 +7,6 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 // import * as strings from 'WeatherAndClockWebPartStrings';
 import * as moment from 'moment-timezone';
-
 import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as $ from 'jquery';
 require('Bluebox.Util');
@@ -23,6 +22,13 @@ export interface IWeatherAndClockWebPartProps {
 
 export default class WeatherAndClockWebPart extends BaseClientSideWebPart<IWeatherAndClockWebPartProps> {
 
+  protected onInit(): Promise<void> {
+    var page = this.context.pageContext.legacyPageContext;
+    window["_spPageContextInfo"] = page;
+
+    return super.onInit();
+  }
+  
   public render(): void {
     SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxWeatherAndClock/Core/webparts/weatherandclock/weatherandclock.css');
     

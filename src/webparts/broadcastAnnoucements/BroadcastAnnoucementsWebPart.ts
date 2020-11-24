@@ -91,7 +91,7 @@ export default class BroadcastAnnouncementsWebPart extends BaseClientSideWebPart
           <div id="bbBroadcast"></div>       
         </div>
         <div class="${ styles.container }">
-          <div id="bbAnnouncementList" class="ms-Dialog ms-Dialog--close ms-Dialog--blocking" style="max-width: max-content !important;">
+          <div id="bbAnnouncementList" class="ms-Dialog ms-Dialog--close ms-Dialog--blocking" style="max-width: max-content !important;">          
           </div>
         </div>
         <div class="${ styles.container }">

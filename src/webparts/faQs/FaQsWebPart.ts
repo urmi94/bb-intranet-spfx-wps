@@ -3,6 +3,7 @@ import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
+import styles from './FaQsWebPart.module.scss';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import {  SPHttpClient, SPHttpClientResponse} from '@microsoft/sp-http'; 
 import * as jQuery from 'jquery'; //"https://code.jquery.com/jquery-3.3.1.js",
@@ -76,18 +77,18 @@ export default class FaQsWebPart extends BaseClientSideWebPart<IFaQsWebPartProps
 
   private _createAccordionHtml(groupedList): void {
 
-    var html: string = '<ul id="accordionGroups" class="accordion categoryAccordion">';
+    var html: string = `<div class="${ styles.faQs }"> <ul id="accordionGroups" class="accordion categoryAccordion">`;
     for(var category in groupedList) {
 
       html += '<li class="group-header">'
 			+ '<a class="toggle-section toggle-group">'
 			+ "<span class='group-title'>" + category + "&nbsp;(" + groupedList[category].length + ")</span>"
 			+ "</a>"
-			+ "<ul class='inner item-container innerAccordion'>";
+			+ `<ul class='inner item-container innerAccordion ${styles.borderStyle}'>`;
 
       groupedList[category].forEach(faq => {
         html += '<li class="item-header">'+
-                  '<a class="toggle-section toggle-item">' +
+                  `<a class="toggle-section toggle-item ${styles.accordionContent}">` +
                     '<span class="item-title">' + faq.Title + '</span>' + 
                   '</a>' +
                   '<div class="inner item-content">' + faq.QnAAnswer + '</div>' +
@@ -96,7 +97,7 @@ export default class FaQsWebPart extends BaseClientSideWebPart<IFaQsWebPartProps
       });     
       html += '</ul></li>';
     }
-    html += '</ul>';
+    html += '</ul></div>';
 
     this.domElement.innerHTML = html;
 
@@ -110,15 +111,17 @@ export default class FaQsWebPart extends BaseClientSideWebPart<IFaQsWebPartProps
     jQuery('.categoryAccordion,.innerAccordion', this.domElement).accordion(accordionOptions);
 
 
+    var activeRow = `${styles["active-row"]}`;
+    var showContent = `${styles["show-content"]}`;
     jQuery('#accordionGroups a').click(() => {
-      $('a.toggle-section').removeClass('active-row');
+      $('a.toggle-section').removeClass(activeRow);
 
       if($('.item-header > a').hasClass('ui-accordion-header-active')) {
-        $('a.ui-accordion-header-active').addClass('active-row');
-        $('a.ui-accordion-header-active').parent().parent().addClass('show-content');
+        $('a.ui-accordion-header-active').addClass(activeRow);
+        $('a.ui-accordion-header-active').parent().parent().addClass(showContent);
       }
       if($('.group-header > a').hasClass('ui-accordion-header-active')) {
-        $('.group-header > a.ui-accordion-header-active').next().addClass('show-content');
+        $('.group-header > a.ui-accordion-header-active').next().addClass(showContent);
       }
     });
   }

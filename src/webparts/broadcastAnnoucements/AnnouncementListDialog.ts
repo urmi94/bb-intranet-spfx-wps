@@ -10,8 +10,7 @@ export default class AnnouncementListDialog{
     public render(): void {   
       let html: Array<string> = [];
       html.push(`
-                <button class="ms-Dialog-button ms-Dialog-buttonClose">
-                    <i class="ms-Icon ms-Icon--Cancel"></i>
+                <button class="ms-Dialog-button ms-Dialog-buttonClose close">
                 </button>
                 
                 <div class="ms-Dialog-title">Broadcast Announcements</div>

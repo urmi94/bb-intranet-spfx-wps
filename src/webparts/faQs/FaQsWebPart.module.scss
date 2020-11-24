@@ -71,4 +71,14 @@
       display: inline-block;
     }
   }
+
+ .accordionContent.active-row {
+    background-color: "[theme: themePrimary, default: #3399B3]";
+    color: white;
+  }
+
+  .borderStyle.show-content {
+    border-top: "[theme: themeLight, default: #3399b3] 2px solid";
+  }
+  
 }

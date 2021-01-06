@@ -30,7 +30,7 @@ export default class WeatherAndClockWebPart extends BaseClientSideWebPart<IWeath
   }
   
   public render(): void {
-    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxWeatherAndClock/Core/webparts/weatherandclock/weatherandclock.css');
+    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/webparts/BlueboxWeatherAndClock/weatherandclock.css');
     
     this.domElement.innerHTML = `<div id="weatherandclock" class="bbWP-WeatherAndClock"></div>`;
     

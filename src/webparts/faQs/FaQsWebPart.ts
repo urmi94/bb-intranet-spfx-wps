@@ -33,8 +33,8 @@ export default class FaQsWebPart extends BaseClientSideWebPart<IFaQsWebPartProps
 
   public constructor() {
     super();
-    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-scripts/Core/fonts/font-awesome/font-awesome.min.css');
-		SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxQnA/Core/webparts/qna/qna.css');
+    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/ext/font-awesome/font-awesome.min.css');
+		SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/webparts/BlueboxQnA/qna.css');
   }
 
   private _getFaqData(): Promise<ISPList> {

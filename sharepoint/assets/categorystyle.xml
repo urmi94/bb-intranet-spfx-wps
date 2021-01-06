@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+<Field ID="{C0461FEF-AD43-48FA-920B-A551A945A9A3}" 
+    StaticName="BBXCatStyleType" 
+    Name="Category Style Type"
+    DisplayName="Category Style Type" 
+    Type="Choice" 
+    Group="Bluebox Custom Columns" 
+    Format="Dropdown" 
+    FillInChoice="FALSE" 
+    Indexed="True">      
+    <CHOICES>
+        <CHOICE>Event</CHOICE>
+        <CHOICE>Corporate Event</CHOICE>
+        <CHOICE>Bulletin Announcement</CHOICE>
+        <CHOICE>Broadcast Announcement</CHOICE>
+    </CHOICES>
+    <Default>Bulletin Announcement</Default>
+</Field>
+<Field ID="{5C17AF2C-62C8-4BBD-A894-DCBE3D233F7E}" 
+    StaticName="BBXCatStyleColour" 
+    Name="Category Style Colour"
+    DisplayName="Category Style Colour" 
+    Type="Text" 
+    Group="Bluebox Custom Columns" >
+    <Default>#FFFFFF</Default>
+</Field>
+<Field ID="{B40AC6DB-5A95-475A-9AE5-C9C9AEF3AA80}" 
+    StaticName="BBXCatStyleImage" 
+    Name="Category Style Image" 
+    DisplayName="Category Style Image" 
+    Type="Text" 
+    Group="Bluebox Custom Columns" />
+<Field ID="{38C5708C-443B-4208-9C33-B642A66AA220}" 
+    StaticName="BBXCatStyleArchive" 
+    Name="Archive?" 
+    DisplayName="Archive?" 
+    Type="Boolean" 
+    Group="Bluebox Custom Columns" 
+    Indexed="True">
+    <Default>0</Default>
+</Field>
+<Field ID="{4AE4E68A-221C-4FEB-B4CD-40341645ED41}" 
+    StaticName="BBXCatStyleKey" 
+    Name="Category Style Key" 
+    DisplayName="Category Style Key" 
+    Type="Calculated" 
+    Group="Bluebox Custom Columns" 
+    ResultType="Text" 
+    ReadOnly="TRUE">
+    <Formula>=IF([Archive?],&quot;&quot;,[Title])</Formula>
+     <FieldRefs>
+        <FieldRef Name="Archive?" ID="{38C5708C-443B-4208-9C33-B642A66AA220}"/>
+        <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}"/>
+     </FieldRefs>    
+</Field>
+<!-- Lookup Field to the theme for use by other module -->
+<Field ID="{D9708D93-CDCF-4A20-AACE-1E9E1E6D0E21}" 
+    StaticName="BBXCategoryStyle" 
+    Name="Category Style" 
+    DisplayName="Category Style" 
+    Type="Lookup" 
+    Group="Bluebox Custom Columns" 
+    Indexed="True" 
+/>
+
+<ContentType ID="0x0100BCEA72EF155A4D2CA1D84D6F1690DD89" 
+    Name="Category Style Item" 
+    Description="Bluebox Category Style Item Content Type" 
+    Group="Bluebox Custom Content Types">
+      <FieldRefs>
+        <FieldRef ID="{C0461FEF-AD43-48FA-920B-A551A945A9A3}"/>
+        <FieldRef ID="{5C17AF2C-62C8-4BBD-A894-DCBE3D233F7E}"/>
+        <FieldRef ID="{B40AC6DB-5A95-475A-9AE5-C9C9AEF3AA80}"/>
+        <FieldRef ID="{38C5708C-443B-4208-9C33-B642A66AA220}"/>
+        <FieldRef ID="{4AE4E68A-221C-4FEB-B4CD-40341645ED41}"/>
+      </FieldRefs>
+    </ContentType> 
+</Elements>

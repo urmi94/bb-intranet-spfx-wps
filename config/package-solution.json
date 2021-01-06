@@ -3,8 +3,9 @@
   "solution": {
     "name": "Bluebox Intranet Modern Webparts",
     "id": "8a935ebf-a788-47e7-ba47-129e5c5d1e0e",
-    "version": "1.0.0.0",
-    "includeClientSideAssets": false,
+    "version": "1.0.0.5",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "developer": {
       "name": "",
@@ -12,7 +13,24 @@
       "privacyUrl": "",
       "termsOfUseUrl": "",
       "mpnId": ""
-    }
+    },
+    "features": [
+      {
+        "title": "Bluebox Intranet Fields and CTs",
+        "description": "Feature to deploy fields and content types specific to Bluebox",
+        "id": "d0e55fc0-5734-49f2-be54-c24961f502d0",
+        "version": "1.0.0.0",
+        "assets": {        
+          "elementManifests": [
+            "billboard.xml",
+            "qna.xml",
+            "categorystyle.xml",
+            "broadcast.xml",
+            "weatherandclock.xml"
+          ]
+        }
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/bluebox-intranet-modern-webparts.sppkg"

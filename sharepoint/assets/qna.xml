@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+<Field ID="{05DE142C-5CD0-4AAA-925C-5A95A99060E5}"
+    Type="HTML" 
+    Name="Answer"
+    DisplayName="Answer" 
+    RichText="TRUE" 
+    RichTextMode="ThemeHtml" 
+    Required="TRUE" 
+    Group="Bluebox Custom Columns" 
+    StaticName="QnAAnswer" />
+<Field ID="{CA1EE08D-F40B-4801-B71C-9EC5B08DFEBC}" 
+    Type="Choice" 
+    Name="Enabled"
+    DisplayName="Enabled" 
+    Format="RadioButtons" 
+    FillInChoice="FALSE" 
+    Group="Bluebox Custom Columns" 
+    StaticName="QnAEnabled" >
+    <CHOICES>
+        <CHOICE>Yes</CHOICE>
+        <CHOICE>No</CHOICE>
+    </CHOICES>
+    <Default>Yes</Default>
+</Field>    
+<Field ID="{B4D99EAF-916E-42D1-BB04-5B0A18B621A3}" 
+    Type="Lookup" 
+    Name="Category" 
+    DisplayName="Category" 
+    Group="Bluebox Custom Columns" 
+    StaticName="FAQCategory" />
+<Field ID="{8672DD75-8580-4E3F-AB17-57B95777CEB3}" 
+    Type="Choice" 
+    Name="Alphabet"
+    DisplayName="Alphabet" 
+    Format="Dropdown" 
+    FillInChoice="FALSE" 
+    Group="Bluebox Custom Columns" 
+    StaticName="AZAlphabet" >
+    <CHOICES>
+        <CHOICE>A</CHOICE>
+        <CHOICE>B</CHOICE>
+        <CHOICE>C</CHOICE>
+        <CHOICE>D</CHOICE>
+        <CHOICE>E</CHOICE>
+        <CHOICE>F</CHOICE>
+        <CHOICE>G</CHOICE>
+        <CHOICE>H</CHOICE>
+        <CHOICE>I</CHOICE>
+        <CHOICE>J</CHOICE>
+        <CHOICE>K</CHOICE>
+        <CHOICE>L</CHOICE>
+        <CHOICE>M</CHOICE>
+        <CHOICE>N</CHOICE>
+        <CHOICE>O</CHOICE>
+        <CHOICE>P</CHOICE>
+        <CHOICE>Q</CHOICE>
+        <CHOICE>R</CHOICE>
+        <CHOICE>S</CHOICE>
+        <CHOICE>T</CHOICE>
+        <CHOICE>U</CHOICE>
+        <CHOICE>V</CHOICE>
+        <CHOICE>W</CHOICE>
+        <CHOICE>X</CHOICE>
+        <CHOICE>Y</CHOICE>
+        <CHOICE>Z</CHOICE>
+    </CHOICES>
+    <Default>A</Default>
+</Field>
+<ContentType ID="0x01008BC5478128EC4071AFDBEA8BCD2DB6F5" 
+    Name="Q and A Item" 
+    Description="Bluebox Custom Content Type for Q and A Item" 
+    Group="Bluebox Custom Content Types">
+    <FieldRefs>
+    <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Title" Required="TRUE"/>
+    <FieldRef ID="{05DE142C-5CD0-4AAA-925C-5A95A99060E5}" DisplayName="Answer" Required="TRUE"/>
+    <FieldRef ID="{CA1EE08D-F40B-4801-B71C-9EC5B08DFEBC}" DisplayName="Enabled" />
+    </FieldRefs>
+</ContentType>
+<ContentType ID="0x01008BC5478128EC4071AFDBEA8BCD2DB6F500A91E5AC39991472287CC118EBF114C78" 
+    Name="FAQ Item" 
+    Description="Bluebox Custom Content Type for FAQ Item" 
+    Group="Bluebox Custom Content Types">
+    <FieldRefs>
+        <FieldRef ID="{B4D99EAF-916E-42D1-BB04-5B0A18B621A3}" Name="Category" DisplayName="Category"/>
+    </FieldRefs>
+</ContentType>
+<ContentType ID="0x01008BC5478128EC4071AFDBEA8BCD2DB6F50057C5090947C24FDAB61149950928E877" 
+    Name="A-Z Item" 
+    Description="Bluebox Custom Content Type for A-Z Item" 
+    Group="Bluebox Custom Content Types">
+    <FieldRefs>
+        <FieldRef ID="{8672DD75-8580-4E3F-AB17-57B95777CEB3}" DisplayName="Alphabet"/>
+    </FieldRefs>
+</ContentType>
+</Elements>

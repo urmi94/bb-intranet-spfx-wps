@@ -37,7 +37,7 @@
       ]
     },
     "Bluebox.Broadcast": {
-      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxBroadcast/Core/webparts/broadcast/Broadcast.js",
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/webparts/BlueboxBroadcast/broadcast.js",
       "globalName": "Bluebox.Broadcast",
       "globalDependencies": [
         "jquery",
@@ -46,7 +46,7 @@
       ]
     },
     "Bluebox.Billboard": {
-      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxBillboard/core/webparts/billboard/billboard.js",
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/webparts/BlueboxBillboard/billboard.js",
       "globalName": "Bluebox.Billboard",
       "globalDependencies": [
         "jquery",
@@ -55,7 +55,7 @@
       ]
     },
     "Bluebox.WeatherAndClock": {
-      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxWeatherAndClock/Core/webparts/weatherandclock/weatherandclock.js",
+      "path": "https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/webparts/BlueboxWeatherAndClock/weatherandclock.js",
       "globalName": "Bluebox.WeatherAndClock",
       "globalDependencies": [
         "jquery",

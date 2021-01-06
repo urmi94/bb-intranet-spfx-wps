@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+<Field ID="{3776BF9F-2343-4BE3-8169-58372BE5FCAD}"
+    Name="Billboard Category"
+    DisplayName="Billboard Category"
+    StaticName="BillboardCategory"
+    Type="Choice"
+    Group="Bluebox Custom Columns" 
+    Format="Dropdown" 
+    FillInChoice="FALSE" >  
+    <CHOICES>
+        <CHOICE>Initiative</CHOICE>
+        <CHOICE>Safety</CHOICE>
+    </CHOICES>
+    <Default>Initiative</Default>
+</Field>
+<Field ID="{F9CC55D8-7D6F-4E31-B744-07498C5B2BB0}" 
+    Name="Billboard Expiry"
+    DisplayName="Billboard Expiry" 
+    StaticName="BillboardExpiry" 
+    Type="DateTime" 
+    Group="Bluebox Custom Columns" 
+    Format="DateOnly" >
+    <DefaultFormula>=[Today]+90</DefaultFormula>
+</Field>
+<Field ID="{09400895-14BC-4382-A350-0F2895436FB3}" 
+    Name="Billboard Visible?" 
+    DisplayName="Billboard Visible?"
+    StaticName="BillboardVisible" 
+    Type="Boolean" 
+    Group="Bluebox Custom Columns">
+    <Default>1</Default>
+</Field>
+<Field ID="{743C73FF-8423-423F-B8A1-249EC309F665}" 
+    Name="Billboard New Window?"
+    DisplayName="Billboard New Window?"
+    StaticName="BillboardNewWindow" 
+    Type="Boolean" 
+    Group="Bluebox Custom Columns">
+    <Default>1</Default>
+</Field>
+<Field ID="{FF29ED6A-D83B-4D45-B7E1-40B445452E70}" 
+    Name="Billboard Image"
+    DisplayName="Billboard Image" 
+    StaticName="BillboardImage" 
+    Type="Image" 
+    Group="Bluebox Custom Columns" 
+    RichText="TRUE" 
+    RichTextMode="ThemeHtml" />
+<Field ID="{550F0495-C49B-4D76-9CE9-945942B78437}" 
+    Name="Billboard Url"
+    DisplayName="Billboard Url" 
+    StaticName="BillboardUrl" 
+    Type="URL" 
+    Group="Bluebox Custom Columns" 
+    Format="Hyperlink" />
+
+<ContentType ID="0x0100F134D67A5CA54AEA8AB8DC45E1DE3185" 
+            Name="Billboard Item" 
+            Group="Bluebox Custom Content Types">
+        <FieldRefs>
+            <FieldRef ID="{3776BF9F-2343-4BE3-8169-58372BE5FCAD}"/>
+            <FieldRef ID="{F9CC55D8-7D6F-4E31-B744-07498C5B2BB0}"/>
+            <FieldRef ID="{FF29ED6A-D83B-4D45-B7E1-40B445452E70}"/>
+            <FieldRef ID="{550F0495-C49B-4D76-9CE9-945942B78437}"/>
+            <FieldRef ID="{743C73FF-8423-423F-B8A1-249EC309F665}"/>
+            <FieldRef ID="{09400895-14BC-4382-A350-0F2895436FB3}"/>
+        </FieldRefs>
+</ContentType> 
+</Elements>

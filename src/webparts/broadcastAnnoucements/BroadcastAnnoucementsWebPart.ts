@@ -1,3 +1,5 @@
+console.log("Broadcats imports");
+
 import { Version } from '@microsoft/sp-core-library';
 import {  IPropertyPaneConfiguration,  PropertyPaneTextField} from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
@@ -8,11 +10,13 @@ import {  SPHttpClient, SPHttpClientResponse} from '@microsoft/sp-http';
 import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as moment from 'moment';
 import * as $ from 'jquery';
+
 require('Bluebox.Util');
 require('Bluebox.Constants');
 require('Bluebox.Loader');
 require('Bluebox.Broadcast');
 // require('moment');
+console.log("Broadcats after imports");
 
 import AnnouncementDetailsDialog from './AnnouncementDetailsDialog';
 import AnnouncementListDialog from './AnnouncementListDialog';
@@ -52,7 +56,7 @@ export default class BroadcastAnnouncementsWebPart extends BaseClientSideWebPart
   protected onInit(): Promise<void> {
     var page = this.context.pageContext.legacyPageContext;
     window["_spPageContextInfo"] = page;
-
+    console.log("Broadcast Init");
     return super.onInit();
   }
   
@@ -84,7 +88,7 @@ export default class BroadcastAnnouncementsWebPart extends BaseClientSideWebPart
   }
 
   public render(): void { 
-    
+    console.log("Broadcast Render");
     this.domElement.innerHTML = `    
       <div class="${ styles.broadcastAnnouncements }">
         <div class="${ styles.container }">
@@ -104,16 +108,20 @@ export default class BroadcastAnnouncementsWebPart extends BaseClientSideWebPart
       HtmlId: "bbBroadcast",
       Source: "modern"
     };
+  
     //Loading Fabric JS - CSS
-    SPComponentLoader.loadCss('https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css');
+    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/ext/office-ui-fabric-js/bb_fabric.components.css');
     SPComponentLoader.loadCss('https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css');
     
     //Loading Bulleting CSS    
-    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxBroadcast/Core/webparts/broadcast/broadcast.css');
-    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/urmi-broadcast/bb-webparts/BlueboxBulletin/Core/webparts/bulletin/bulletinPopup1.css');
+    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/webparts/BlueboxBroadcast/broadcast.css');
+    SPComponentLoader.loadCss('https://bbxclientsdevstoragecdn.blob.core.windows.net/sp-common/4.00/webparts/BlueboxBulletin/bulletinPopup1.css');
 
+
+    console.log("Broadcast before chckscript");
     var checkScriptExist = setInterval(() => {
-      if(Bluebox.Constants != "undefined" && Bluebox.Loader != "undefined" && Bluebox.Broadcast2 != "undefined" && jQuery.fn.vTicker != "undefined") {
+      console.log("Broadcast checkScript", Bluebox);
+      if(Bluebox != "undefined" && Bluebox.Constants != "undefined" && Bluebox.Loader != "undefined" && Bluebox.Broadcast2 != "undefined" && jQuery.fn.vTicker != "undefined") {
          Bluebox.Broadcast2.Execute(option);
          clearInterval(checkScriptExist);
       } 

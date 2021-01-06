@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+<Field ID="{F21CD396-19CE-4A9D-BA7F-C99BD29AF930}" 
+    Type="Text" 
+    Name="Weather Location"
+    DisplayName="Weather Location" 
+    StaticName="WeatherLocation" 
+    Group="Bluebox Custom Columns"  />
+<Field ID="{D30081AF-E8D3-4943-9DA2-653C253FE37A}" 
+    Type="Text" 
+    Name="Timezone Code"
+    DisplayName="Timezone Code" 
+    StaticName="ClockCode" 
+    Group="Bluebox Custom Columns"/>
+<Field ID="{83F1F40C-4212-4C38-98DD-B15C12B66CB2}" 
+    Type="Text"
+    Name="Background Colour" 
+    DisplayName="Background Colour" 
+    StaticName="WeatherBGColour" 
+    Group="Bluebox Custom Columns"  
+/>
+<Field ID="{A8BC5464-36F4-41A0-9E7E-2726A5E631C5}" 
+    Type="Text" 
+    Name="Icon Colour"
+    DisplayName="Icon Colour" 
+    StaticName="WeatherIconColour" 
+    Group="Bluebox Custom Columns" />
+<Field ID="{93E876BC-6A41-43EE-8756-5543C8EB840E}" 
+    Type="Text" 
+    Name="Text Colour"
+    DisplayName="Text Colour" 
+    StaticName="WeatherTextColour" 
+    Group="Bluebox Custom Columns" />
+<Field ID="{630A7A30-6DE9-42D0-8163-50C1129DEA21}" 
+    Type="Number" 
+    Name="Sort Order"
+    DisplayName="Sort Order" 
+    StaticName="WeatherSortOrder" 
+    Group="Bluebox Custom Columns" />
+<ContentType ID="0x0100151663BF921B472FA6E6CAE5292F410F" 
+    Name="WeatherClock Item" 
+    Description="Bluebox Custom Content Type for Weather Item" 
+    Group="Bluebox Custom Content Types">
+    <FieldRefs>
+        <FieldRef ID="{F21CD396-19CE-4A9D-BA7F-C99BD29AF930}" DisplayName="Weather Location" Required="TRUE"/>
+        <FieldRef ID="{D30081AF-E8D3-4943-9DA2-653C253FE37A}" DisplayName="Timezone Code" Required="TRUE" />
+        <FieldRef ID="{83F1F40C-4212-4C38-98DD-B15C12B66CB2}" DisplayName="Background Colour" />
+        <FieldRef ID="{A8BC5464-36F4-41A0-9E7E-2726A5E631C5}" DisplayName="Icon Colour" />
+        <FieldRef ID="{93E876BC-6A41-43EE-8756-5543C8EB840E}" DisplayName="Text Colour"/>
+        <FieldRef ID="{630A7A30-6DE9-42D0-8163-50C1129DEA21}" DisplayName="Sort Order"/>
+    </FieldRefs>
+</ContentType>
+</Elements>

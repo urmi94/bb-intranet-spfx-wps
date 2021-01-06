@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+<Field ID="{9812fcaa-2504-4774-9dce-fa32968d3b2d}" 
+    Type="Choice" 
+    Name="Broadcast Severity"
+    DisplayName="Broadcast Severity" 
+    Format="Dropdown" 
+    FillInChoice="FALSE" 
+    Group="Bluebox Custom Columns" 
+    StaticName="BroadcastSeverity">    
+    <CHOICES>
+        <CHOICE>Information</CHOICE>
+        <CHOICE>Warning</CHOICE>
+        <CHOICE>Emergency</CHOICE>
+    </CHOICES>
+    <Default>Information</Default>
+</Field>
+<Field ID="{42F3CDA7-F5FF-4346-B40C-B27670764C4F}" 
+    Type="UserMulti" 
+    Name="Broadcast Distribution" 
+    DisplayName="Broadcast Distribution" 
+    UserSelectionMode="PeopleAndGroups" 
+    Mult="TRUE" 
+    Group="Bluebox Custom Columns" 
+    StaticName="BroadcastDistribution" />
+<Field ID="{75FAF107-D05E-4A4F-B5D5-4C9B8276FBC8}" 
+    Type="DateTime" 
+    Name="Published Date" 
+    DisplayName="Published Date" 
+    Required="FALSE" 
+    Format="DateOnly" 
+    Group="Bluebox Custom Columns" 
+    StaticName="BroadcastPublishedDate" >
+    <DefaultFormula>=[Today]</DefaultFormula>
+</Field>
+<ContentType ID="0x0104002E36E35B48AC13449DFD38D2A892233E"
+        Name="Broadcast Announcement" 
+        Description="Bluebox Custom Content Type for Broadcast Announcement" 
+        Group="Bluebox Custom Content Types">
+        <FieldRefs> 
+            <FieldRef ID="{D9708D93-CDCF-4A20-AACE-1E9E1E6D0E21}"/>
+            <FieldRef ID="{42F3CDA7-F5FF-4346-B40C-B27670764C4F}"/>
+            <FieldRef ID="{75FAF107-D05E-4A4F-B5D5-4C9B8276FBC8}"/>
+        </FieldRefs>
+</ContentType> 
+</Elements>

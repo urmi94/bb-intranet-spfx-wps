@@ -18,6 +18,8 @@
     "@microsoft/sp-office-ui-fabric-core": "1.11.0",
     "@microsoft/sp-property-pane": "1.11.0",
     "@microsoft/sp-webpart-base": "1.11.0",
+    "@pnp/graph": "^2.1.0",
+    "@pnp/sp": "^2.1.0",
     "@pnp/spfx-controls-react": "2.0.0",
     "jquery": "^2.2.4",
     "jqueryui": "^1.11.1",

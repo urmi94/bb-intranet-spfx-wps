@@ -12,6 +12,15 @@ require('Bluebox.Util');
 require('Bluebox.Constants');
 require('Bluebox.Loader');
 require('Bluebox.Billboard');
+
+import { sp } from "@pnp/sp";
+import "@pnp/sp/webs";
+import "@pnp/sp/lists";
+import "@pnp/sp/content-types";
+import "@pnp/sp/views";
+import { IField, IFieldAddResult } from "@pnp/sp/fields/types";
+import "@pnp/sp/fields";
+
 declare var Bluebox:any;
 
 export interface IBillboardWebPartProps {
@@ -30,7 +39,32 @@ export default class BillboardWebPart extends BaseClientSideWebPart<IBillboardWe
     return super.onInit();
   }
 
-  public render(): void {
+  public async render(): Promise<void> {
+
+    //Billboard
+    const billboardListEnsureResult = 
+    await sp.web.lists.ensure("Billboard",
+    "Bluebox Billboard List", 100, 
+    false, {
+      EnableVersioning: true,
+      ContentTypesEnabled: true
+    });
+
+    await billboardListEnsureResult.list.contentTypes.getById("0x01").delete;
+    billboardListEnsureResult.list.contentTypes.addAvailableContentType("0x0100F134D67A5CA54AEA8AB8DC45E1DE3185");
+    
+    await billboardListEnsureResult.list.views.getByTitle("All Items").fields.add("BillboardCategory");
+    await billboardListEnsureResult.list.views.getByTitle("All Items").fields.add("BillboardExpiry");
+    await billboardListEnsureResult.list.views.getByTitle("All Items").fields.add("BillboardUrl");
+    await billboardListEnsureResult.list.views.getByTitle("All Items").fields.add("BillboardNewWindow");
+    await billboardListEnsureResult.list.views.getByTitle("All Items").fields.add("BillboardVisible");
+    await billboardListEnsureResult.list.views.getByTitle("All Items").update({
+      query: ` <Query>
+                <OrderBy>
+                  <FieldRef Name="Title" />
+                </OrderBy>
+              </Query>`
+    });
     
     var _options = {
       data: {

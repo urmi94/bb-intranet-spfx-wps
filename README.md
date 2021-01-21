@@ -1,8 +1,12 @@
-# billboard-broadcast
+# Bluebox Intranet Modern Webparts using SPFx
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Includes fields and content type feature deployment and list creation for the following webparts: 
+- Billboard
+- Broadcast Announcements
+- FAQs
+- Weather And Clock
 
 [picture of the solution in action, if possible]
 
